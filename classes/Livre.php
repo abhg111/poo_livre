@@ -10,13 +10,14 @@ class Livre {
 
 
 
-public function __construct(string $titre, string $nombreDePages, string $annéeDeParution, string $prix, Auteur $auteur ) {
+public function __construct(string $titre, string $nombreDePages, string $annéeDeParution, string $prix, Auteur $auteur) {
 
            $this->titre = $titre;
            $this->nombreDePages = $nombreDePages;
            $this->annéeDeParution = new DateTime ($annéeDeParution);
            $this->prix = $prix;
-           $this->Auteur = $auteur;
+           $this->auteur = $auteur;
+           $this->auteur->addLivre($this);
 
 
 }
@@ -124,24 +125,13 @@ public function __construct(string $titre, string $nombreDePages, string $année
         
         return $this;
     }
+
     
-    //public function  afficherBibliographie() {
-        //return $this." Livres De ".$this->$auteur;
-        
-        
-        
-    //}
-    public function  getinfos() {
-        return $this." Livres De ".$this->auteur;
-  
-  
-  
-     }
     
     
     public function __toString() {
         
-        return $this->titre." (".$this->annéeDeParution->format("Y").")";  
+        return $this->titre." (".$this->annéeDeParution->format("Y").")". " : ".$this->nombreDePages. " / ".$this->prix. "€ ";  
      }
 
 
