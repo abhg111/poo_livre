@@ -16,5 +16,9 @@ $ca = new Livre("Ca", "1138", "1986", "20", $stephenKing);
 
 //var_dump($stephenKing);
  //echo $stephenKing;
- echo $stephenKing->afficherBibliographie();
- echo $ca;
+ //echo $stephenKing->();
+ //echo $ca;
+
+//var_dump($ca);
+
+echo $ca->getinfos();

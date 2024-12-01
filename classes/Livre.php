@@ -16,7 +16,7 @@ public function __construct(string $titre, string $nombreDePages, string $année
            $this->nombreDePages = $nombreDePages;
            $this->annéeDeParution = new DateTime ($annéeDeParution);
            $this->prix = $prix;
-           $this->Auteur = $auteur, 
+           $this->Auteur = $auteur;
 
 
 }
@@ -104,23 +104,46 @@ public function __construct(string $titre, string $nombreDePages, string $année
     }
 
 
-    public function  afficherBibliographie() {
-        return $this." Livres De ".$this->getNom()."<br>";
+    
+    /**
+     * Get the value of auteur
+     */ 
+    public function getAuteur(): Auteur
+    {
+        return $this->auteur;
+    }
+    
+    /**
+     * Set the value of auteur
+     *
+     * @return  self
+     */ 
+    public function setAuteur(Auteur $auteur)
+    {
+        $this->auteur = $auteur;
+        
+        return $this;
+    }
+    
+    //public function  afficherBibliographie() {
+        //return $this." Livres De ".$this->$auteur;
+        
+        
+        
+    //}
+    public function  getinfos() {
+        return $this." Livres De ".$this->auteur;
   
   
   
      }
-  
-
-
-
-    public function __toString() {
     
+    
+    public function __toString() {
+        
         return $this->titre." (".$this->annéeDeParution->format("Y").")";  
      }
 
 
-    
 
-    
 }

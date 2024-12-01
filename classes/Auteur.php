@@ -4,7 +4,7 @@ class Auteur {
 
     private string $nom;
     private string $prenom;
-    private array $livres;
+    //private array $livres;
 
 
 
@@ -54,27 +54,29 @@ public function __construct(string $nom, string $prenom) {
     public function setPrenom($prenom)
     {
         $this->prenom = $prenom;
-
+        
         return $this;
     }
+    
 
 
-    public function  afficherBibliographie() {
+    public function  afficherBibliographi() {
         return $this." Livres De ".$this->getPreNom(). " ". $this->getNom(). "<br>";
   
   
   
      }
-  
+
 
 
 
 
     public function __toString() {
    
-        return $this->nom." ".$this->prenom." "; 
+        return $this->nom." ".$this->prenom; 
   
-     }
+    }
+
 
 
 }
