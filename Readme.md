@@ -19,7 +19,6 @@ This function shows each book's name and info.
 
         return $result;
         
-       ![alt text](image.png)
 
 
     }
