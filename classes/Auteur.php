@@ -12,6 +12,7 @@ public function __construct(string $nom, string $prenom) {
 
            $this->nom = $nom;
            $this->prenom = $prenom;
+           $this->livres = [];
 
 
 }
@@ -54,27 +55,57 @@ public function __construct(string $nom, string $prenom) {
     public function setPrenom($prenom)
     {
         $this->prenom = $prenom;
-
+        
+        return $this;
+    }
+    
+    /**
+     * Get the value of livres
+     */ 
+    public function getLivres()
+    {
+        return $this->livres;
+    }
+    
+    /**
+     * Set the value of livres
+     *
+     * @return  self
+     */ 
+    public function setLivres($livres)
+    {
+        $this->livres = $livres;
+        
         return $this;
     }
 
 
-    public function  afficherBibliographie() {
-        return $this." Livres De ".$this->getPreNom(). " ". $this->getNom(). "<br>";
-  
-  
-  
-     }
-  
+    public function  addLivre(Livre $livre) {
+        return $this->livres[] = $livre ."<br>";
+    }
+    
+    public function  afficherBibliographie()  {
+        $result = "<h1>Livres de $this</h1>";
+
+        foreach($this->livres as $livre){
+
+           $result.= $livre."<br>";
+        }
+
+        return $result;
 
 
+    }
+    
 
-
+    
+    
+    
+    
+    
     public function __toString() {
-   
-        return $this->nom." ".$this->prenom." "; 
-  
-     }
-
-
+    
+        return $this->prenom." ".$this->nom; 
+    
+    }
 }
