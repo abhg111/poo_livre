@@ -16,3 +16,4 @@ $shining = new Livre("Shining", "477", "1977", "16", $stephenKing);
 
 
 echo $stephenKing->afficherBibliographie();
+
