@@ -26,7 +26,7 @@ This function shows each book's name and info.
     
  
 ```
- Display result
+  ## **Display result**
  
  ![alt text](image.png)
 
